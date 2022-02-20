@@ -1,5 +1,5 @@
-def main():
-    with open("Day2\input.txt") as f:
+def main(file):
+    with open(file) as f:
         input = f.readlines()
     input = list(map(lambda x: x.split(), input))
 
@@ -14,8 +14,8 @@ def main():
         elif password[p[0]] != letter and password[p[1]] == letter:
             valid_count += 1
     
-    print(valid_count)
+    return valid_count
 
 
 if __name__ == "__main__":
-    main()
+    print(main("Day2/input.txt"))

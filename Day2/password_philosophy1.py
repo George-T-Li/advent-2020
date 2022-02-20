@@ -1,5 +1,5 @@
-def main():
-    with open("Day2\input.txt") as f:
+def main(file):
+    with open(file) as f:
         input = f.readlines()
     input = list(map(lambda x: x.split(), input))
 
@@ -12,8 +12,8 @@ def main():
         if hilo[0] <= occurrences <= hilo[1]:
             valid_count += 1
     
-    print(valid_count)
+    return valid_count
 
 
 if __name__ == "__main__":
-    main()
+    print(main("Day2/input.txt"))

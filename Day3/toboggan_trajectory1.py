@@ -1,5 +1,5 @@
-def main():
-    with open("Day3\input.txt") as f:
+def main(file):
+    with open(file) as f:
         input = f.readlines()
     input = list(map(lambda x: x.strip(), input))
     width = len(input[0])
@@ -12,8 +12,8 @@ def main():
             tree_count += 1
         position = (position + 3) % width
 
-    print(tree_count)
+    return tree_count
 
 
 if __name__ == "__main__":
-    main()
+    print(main("Day3/input.txt"))

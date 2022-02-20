@@ -1,5 +1,5 @@
-def main():
-    with open("Day1\input.txt") as f:
+def main(file):
+    with open(file) as f:
         input = f.readlines()
     input = list(map(int, input))
     input.sort()
@@ -17,8 +17,8 @@ def main():
             if start == end: break
             sum = value + new_l[start] + new_l[end]
             if sum == 2020:
-                return  print(value * new_l[start] * new_l[end])
+                return value * new_l[start] * new_l[end]
     
 
 if __name__ == "__main__":
-    main()
+    print(main("Day1/input.txt"))

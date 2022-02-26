@@ -1,4 +1,4 @@
-import shuttle_search1, pytest
+import shuttle_search1, shuttle_search2, pytest
 
 def test_shuttle_search1():
     file = "Day13/test_input.txt"

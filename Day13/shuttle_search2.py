@@ -1,16 +1,22 @@
+from math import lcm
+
 def main(buses):
-    first = int(buses[0])
+    ids_table = {}
+    ids = []
+    for index, id in enumerate(buses):
+        if id != "x":
+            ids_table[int(id)] = index
+            ids.append(int(id))
 
-    while True:
-        #if first > 100000000000000:
-        for index, bus in enumerate(buses):
-            if bus != 'x':
-                if (first + index) % int(bus) != 0:
-                    break
-        else:
-            return first
-        first += int(buses[0])
-
+    current_time = ids[0]
+    ids_so_far = [ids[0]]
+    for index, id in enumerate(ids[1:]):
+        next = lcm(*ids_so_far)
+        while (current_time + ids_table[id]) % id != 0:
+            current_time += next
+        ids_so_far.append(id)
+        
+    return current_time
 
 def transform(file):
     with open(file) as f:

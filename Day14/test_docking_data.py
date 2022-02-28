@@ -1,4 +1,4 @@
-import docking_data1, pytest
+import docking_data1, docking_data2, pytest
 
 def test_prepend_zeros():
     b_string = '0b1011'
@@ -15,3 +15,8 @@ def test_docking_data1():
     file = "Day14/test_input.txt"
     result = docking_data1.main(file) 
     assert result == 165
+
+def test_docking_data2():
+    file = "Day14/test_input2.txt"
+    result = docking_data2.main(file) 
+    assert result == 208
